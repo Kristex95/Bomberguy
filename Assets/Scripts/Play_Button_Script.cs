@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Play_Button_Script : MonoBehaviour
 {
-
+    public GameObject mainMenu;
     public GameObject Level;
     public GameObject LevelSpawn;
 
@@ -18,7 +18,7 @@ public class Play_Button_Script : MonoBehaviour
 
     private void onClick()
     {
-        Destroy(gameObject);
+        mainMenu.SetActive(false);
         Instantiate(Level, LevelSpawn.transform.position, Quaternion.identity);
     }
 }

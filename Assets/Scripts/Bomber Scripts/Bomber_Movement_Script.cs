@@ -9,7 +9,7 @@ public class Bomber_Movement_Script : MonoBehaviour
     private Animator anim;
     public bool confirm = false;
     public float speed;
-
+    public bool alive = true;
 
     private Vector2 moveDir = Vector2.zero;
     
@@ -24,12 +24,18 @@ public class Bomber_Movement_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Get_Input();
+        if (alive)
+        {
+            Set_Input();
+        }
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (alive)
+        {
+            Move();
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -59,11 +65,9 @@ public class Bomber_Movement_Script : MonoBehaviour
         {
             moveDir = Vector3.zero;
         }
-
-        
     }
 
-    private void Get_Input()
+    private void Set_Input()
     {
         anim.SetFloat("Horizontal_Speed", moveDir.x);
         anim.SetFloat("Vertical_Speed", moveDir.y);
@@ -77,5 +81,24 @@ public class Bomber_Movement_Script : MonoBehaviour
     public void OnConfirmPress(InputAction.CallbackContext context)
     {
         confirm = context.action.triggered;     
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
+
+    public void Die()
+    {
+        alive = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Player_Bomb_Placement>().enabled = false;
+    }
+
+    public void Respawn()
+    {
+        alive = true;
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<Player_Bomb_Placement>().enabled = true;
     }
 }

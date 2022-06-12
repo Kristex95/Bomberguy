@@ -55,7 +55,19 @@ MonoBehaviour:
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3304575513810671831}
+        m_TargetAssemblyTypeName: Bomber_Movement_Script, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_DeviceRegainedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -111,22 +123,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 423dc538-023f-4100-880a-8b00a4421ad1
     m_ActionName: Player/Confirm[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3304575513810671831}
-        m_TargetAssemblyTypeName: Bomber_Movement_Script, Assembly-CSharp
-        m_MethodName: OnConfirmRelease
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 6b35a436-7b88-4947-aa7a-531f02d726ba
-    m_ActionName: Player/Confirm_Release[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
@@ -216,7 +212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e773b2ef4a29d418b67751052c38fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirm: 0
   speed: 3
+  alive: 1
 --- !u!114 &6410251287117280845
 MonoBehaviour:
   m_ObjectHideFlags: 0

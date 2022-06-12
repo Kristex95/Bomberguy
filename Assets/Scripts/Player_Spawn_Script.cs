@@ -7,7 +7,7 @@ public class Player_Spawn_Script : MonoBehaviour
 {
     private PlayerInputManager manager;
     [SerializeField]
-    Vector2 spawnPosition = Vector2.zero;
+    public GameObject spawnPosition;
     private Vector3 spawnPosition3D = Vector3.zero;
 
 
@@ -15,16 +15,14 @@ public class Player_Spawn_Script : MonoBehaviour
     void Start()
     {
         manager = GetComponent<PlayerInputManager>();
-        spawnPosition3D = new Vector3(spawnPosition.x, spawnPosition.y, 0);
+        spawnPosition3D = new Vector3(spawnPosition.transform.position.x, spawnPosition.transform.position.y, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    
+    }    
 
     private void OnPlayerJoined(PlayerInput playerInput)
     {

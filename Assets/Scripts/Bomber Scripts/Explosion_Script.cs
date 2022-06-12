@@ -30,7 +30,7 @@ public class Explosion_Script : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Bomber_Movement_Script>().Die();
         }
     }
     
