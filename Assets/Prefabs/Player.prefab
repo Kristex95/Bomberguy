@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bomb: {fileID: 5835364056727333464, guid: 47f436116ce211347af975ec33bc3f0c, type: 3}
   BombSpawn: {fileID: 8210540404615040368}
-  timeToPlaceBomb: 1
+  timeToPlaceBomb: 5
 --- !u!61 &3304575513810671825
 BoxCollider2D:
   m_ObjectHideFlags: 0

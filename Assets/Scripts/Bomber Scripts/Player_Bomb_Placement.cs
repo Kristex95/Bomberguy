@@ -8,6 +8,7 @@ public class Player_Bomb_Placement : MonoBehaviour
     public GameObject Bomb;
     public Transform BombSpawn;
     [SerializeField]
+    [Range(1f, 5f)]
     float timeToPlaceBomb = 1f;
     private float nextTimeToPlace = 0f;
 
@@ -24,7 +25,7 @@ public class Player_Bomb_Placement : MonoBehaviour
     {
         if (placedBomb && Time.time >= nextTimeToPlace)
         {
-            nextTimeToPlace = Time.time + 1f / timeToPlaceBomb;
+            nextTimeToPlace = Time.time + timeToPlaceBomb;
             Spawn_Bomb();
         }
     }

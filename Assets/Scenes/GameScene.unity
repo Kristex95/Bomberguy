@@ -7033,15 +7033,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e19aeee532304b4f8fd85dc069dafa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activePlayers: []
-  spawns: []
-  gameIsRunning: 0
   readyFields:
   - {fileID: 2099626584}
   - {fileID: 319899096}
   - {fileID: 1543706084}
   - {fileID: 708566309}
+  menu: {fileID: 1187172195}
+  levels:
+  - {fileID: 8195599303939991942, guid: e05a3887df3b8034a872d24dd97167f1, type: 3}
+  activePlayers: []
   playersReady: 0
+  spawns: []
+  gameIsRunning: 0
 --- !u!1 &1165719412
 GameObject:
   m_ObjectHideFlags: 0
