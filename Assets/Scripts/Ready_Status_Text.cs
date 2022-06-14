@@ -21,7 +21,7 @@ public class Ready_Status_Text : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        str = "Ready 0/" + gameController.activePlayers.Count;
+        str = "Ready " + gameController.playersReady + "/" + gameController.activePlayers.Count;
         Text.text = str;
     }
 }

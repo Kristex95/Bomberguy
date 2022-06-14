@@ -83,9 +83,19 @@ public class Bomber_Movement_Script : MonoBehaviour
         confirm = context.action.triggered;     
     }
 
+    //Is called when player disconnects or controll is lost
     public void Destroy()
     {
-        Destroy(gameObject);
+        GameController gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        foreach (KeyValuePair<GameObject, GameObject> item in gc.playersSpawn)
+        {
+            if(item.Value == this.gameObject)
+            {
+                gc.playersSpawn[item.Key] = null;
+                break;
+            }
+        }
+        Destroy(this.gameObject);
     }
 
     public void Die()
@@ -93,6 +103,7 @@ public class Bomber_Movement_Script : MonoBehaviour
         alive = false;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Player_Bomb_Placement>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 
     public void Respawn()
@@ -100,5 +111,6 @@ public class Bomber_Movement_Script : MonoBehaviour
         alive = true;
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<Player_Bomb_Placement>().enabled = true;
+        GetComponent<BoxCollider2D>().enabled = true;
     }
 }

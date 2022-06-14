@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 1f0a397fe16b19340ad917e5f9b7b1db
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: cc34d0f3dc257a442819830b408c5322, type: 3}
+  missingFiles:
+  - Assets/Test Project/Assets/Brackeys/2D Mega Pack/Backgrounds/DustyBackground.png
+  errors:
+  - 'Missing texture asset: Test Project/Assets/Brackeys/2D Mega Pack/Backgrounds/DustyBackground.png'
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  missingTags: []
+  importerVersion: 11
+  pixelsPerUnit: 100
+  edgesPerEllipse: 32
+  numberOfObjectsImported: 2
+  useSpriteAtlas: 1
+  atlasWidth: 2048
+  atlasHeight: 2048

@@ -24,8 +24,8 @@ public class Player_Spawn_Script : MonoBehaviour
         
     }    
 
-    private void OnPlayerJoined(PlayerInput playerInput)
+    /*private void OnPlayerJoined(PlayerInput playerInput)
     {
         playerInput.transform.position = spawnPosition3D;
-    }
+    }*/
 }
