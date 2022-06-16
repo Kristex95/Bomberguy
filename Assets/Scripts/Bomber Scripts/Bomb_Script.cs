@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bomb_Script : MonoBehaviour
 {
-    public CircleCollider2D coll;
+    public BoxCollider2D coll;
     
     public float explodeTime = 3f;
     public bool collidersInside = false;
@@ -18,7 +18,7 @@ public class Bomb_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator Create_Explode()
@@ -40,6 +40,4 @@ public class Bomb_Script : MonoBehaviour
         collidersInside = true;
         coll.isTrigger = true;
     }
-
-
 }

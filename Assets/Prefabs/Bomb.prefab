@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7998631069003435612}
   - component: {fileID: 3364009352877846857}
   - component: {fileID: 7455783414871794136}
-  - component: {fileID: 1566504977878904773}
+  - component: {fileID: 96708293585084711}
   m_Layer: 8
   m_Name: Bomb
   m_TagString: Untagged
@@ -96,16 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea8ab88ab97e944e944ef54a3af1fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 4
-  DesiredLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  coll: {fileID: 1566504977878904773}
-  Explosion: {fileID: 7206985929353614528, guid: 9a3be35268eb8624db9523dd6d38d312, type: 3}
+  coll: {fileID: 96708293585084711}
   explodeTime: 2
   collidersInside: 0
---- !u!58 &1566504977878904773
-CircleCollider2D:
+--- !u!61 &96708293585084711
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,5 +113,15 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0006254, y: 1.0006254}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

@@ -110,7 +110,6 @@ public class Bomber_Movement_Script : MonoBehaviour
     {
         alive = true;
         GetComponent<SpriteRenderer>().enabled = true;
-        GetComponent<Player_Bomb_Placement>().enabled = true;
         GetComponent<BoxCollider2D>().enabled = true;
     }
 }

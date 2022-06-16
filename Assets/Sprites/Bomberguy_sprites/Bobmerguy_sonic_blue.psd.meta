@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 6757ecd47f43cf542a5094d5038eff2e
+guid: 3aee9a8bd70ad69409c29e34b4666216
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4826525276673113122
-    second: Bobmerguy_sprite_blue_0
+      213: -6533836182891355786
+    second: Bobmerguy_sonic_blue_0
   - first:
-      213: 1746569374554714434
-    second: Bobmerguy_sprite_blue_1
+      213: 2821283050314001296
+    second: Bobmerguy_sonic_blue_1
   - first:
-      213: -167808337399761263
-    second: Bobmerguy_sprite_blue_2
+      213: 7013299666581859715
+    second: Bobmerguy_sonic_blue_2
   - first:
-      213: -497466525400925555
-    second: Bobmerguy_sprite_blue_3
+      213: -2201130634328884162
+    second: Bobmerguy_sonic_blue_3
   - first:
-      213: -2959728506905011118
-    second: Bobmerguy_sprite_blue_4
+      213: 5989379381015243427
+    second: Bobmerguy_sonic_blue_4
   - first:
-      213: 3452605809968132052
-    second: Bobmerguy_sprite_blue_5
+      213: -1194067330608113917
+    second: Bobmerguy_sonic_blue_5
   - first:
-      213: -4433803339930111984
-    second: Bobmerguy_sprite_blue_6
+      213: -714165559218673956
+    second: Bobmerguy_sonic_blue_6
   - first:
-      213: -3171895820434796849
-    second: Bobmerguy_sprite_blue_7
+      213: -735105825381811839
+    second: Bobmerguy_sonic_blue_7
   - first:
-      213: -3826040073669205374
-    second: Bobmerguy_sprite_blue_8
+      213: 869574686600476486
+    second: Bobmerguy_sonic_blue_8
   - first:
-      213: 5094290237794402360
-    second: Bobmerguy_sprite_blue_9
+      213: 223254424421026458
+    second: Bobmerguy_sonic_blue_9
   - first:
-      213: 4254855289094453402
-    second: Bobmerguy_sprite_blue_10
+      213: 8564832243059750317
+    second: Bobmerguy_sonic_blue_10
   - first:
-      213: -6247505930486334614
-    second: Bobmerguy_sprite_blue_11
+      213: -7982795215193310772
+    second: Bobmerguy_sonic_blue_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_0
+      name: Bobmerguy_sonic_blue_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22c7b87ca234bf240800000000000000
-      internalID: 4826525276673113122
+      spriteID: 671aa220c962355a0800000000000000
+      internalID: -6533836182891355786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_1
+      name: Bobmerguy_sonic_blue_1
       rect:
         serializedVersion: 2
         x: 16
@@ -162,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 241f8e9a79f0d3810800000000000000
-      internalID: 1746569374554714434
+      spriteID: 09bebc88cf5372720800000000000000
+      internalID: 2821283050314001296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_2
+      name: Bobmerguy_sonic_blue_2
       rect:
         serializedVersion: 2
         x: 32
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19630fac433dbadf0800000000000000
-      internalID: -167808337399761263
+      spriteID: 38d2af183ee345160800000000000000
+      internalID: 7013299666581859715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_3
+      name: Bobmerguy_sonic_blue_3
       rect:
         serializedVersion: 2
         x: 0
@@ -204,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8a74d1b4d4a819f0800000000000000
-      internalID: -497466525400925555
+      spriteID: e3cb894a9530471e0800000000000000
+      internalID: -2201130634328884162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_4
+      name: Bobmerguy_sonic_blue_4
       rect:
         serializedVersion: 2
         x: 16
@@ -225,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25c5452ba9eece6d0800000000000000
-      internalID: -2959728506905011118
+      spriteID: 3aa667e50dc8e1350800000000000000
+      internalID: 5989379381015243427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_5
+      name: Bobmerguy_sonic_blue_5
       rect:
         serializedVersion: 2
         x: 32
@@ -246,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dfa99401be1aef20800000000000000
-      internalID: 3452605809968132052
+      spriteID: 3075439d612dd6fe0800000000000000
+      internalID: -1194067330608113917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_6
+      name: Bobmerguy_sonic_blue_6
       rect:
         serializedVersion: 2
         x: 0
@@ -267,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01076878a57f772c0800000000000000
-      internalID: -4433803339930111984
+      spriteID: cd6e3fb2536c616f0800000000000000
+      internalID: -714165559218673956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_7
+      name: Bobmerguy_sonic_blue_7
       rect:
         serializedVersion: 2
         x: 16
@@ -288,14 +288,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fce00768e892bf3d0800000000000000
-      internalID: -3171895820434796849
+      spriteID: 189fbc585216cc5f0800000000000000
+      internalID: -735105825381811839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_8
+      name: Bobmerguy_sonic_blue_8
       rect:
         serializedVersion: 2
         x: 32
@@ -309,14 +309,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 282a98003dc27eac0800000000000000
-      internalID: -3826040073669205374
+      spriteID: 6473e7cf199511c00800000000000000
+      internalID: 869574686600476486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_9
+      name: Bobmerguy_sonic_blue_9
       rect:
         serializedVersion: 2
         x: 0
@@ -330,14 +330,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 830c9760bfd82b640800000000000000
-      internalID: 5094290237794402360
+      spriteID: a9a462657b8291300800000000000000
+      internalID: 223254424421026458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_10
+      name: Bobmerguy_sonic_blue_10
       rect:
         serializedVersion: 2
         x: 16
@@ -351,14 +351,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a98ba2d97584c0b30800000000000000
-      internalID: 4254855289094453402
+      spriteID: da57360fb856cd670800000000000000
+      internalID: 8564832243059750317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bobmerguy_sprite_blue_11
+      name: Bobmerguy_sonic_blue_11
       rect:
         serializedVersion: 2
         x: 32
@@ -372,8 +372,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6b3739f4766c49a0800000000000000
-      internalID: -6247505930486334614
+      spriteID: cc9f6b3eb0a673190800000000000000
+      internalID: -7982795215193310772
       vertices: []
       indices: 
       edges: []
