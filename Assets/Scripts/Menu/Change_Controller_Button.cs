@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Change_Controller_Button : MonoBehaviour
 {
+    public bool collided = false;
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,14 +15,24 @@ public class Change_Controller_Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*if(player.GetComponent<Bomber_Movement_Script>().confirm)
+            player.GetComponent<Bomber_Skin_Select>().NextOption();*/
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<Bomber_Movement_Script>().confirm)
+        /*if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Bomber_Skin_Select>().NextOption();
-        }
+            collided = true;
+            player = collision.gameObject;
+        }*/
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        /*if (collision.gameObject.tag == "Player")
+        {
+            collided = false;
+        }*/
     }
 }

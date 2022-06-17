@@ -7,6 +7,7 @@ using UnityEngine;
 public class AnimatorDB : ScriptableObject
 {
     public RuntimeAnimatorController[] animator;
+    public Sprite[] sprite;
 
     public int AnimationCount 
     {
@@ -19,5 +20,10 @@ public class AnimatorDB : ScriptableObject
     public RuntimeAnimatorController GetAnimator(int index)
     {
         return animator[index];
+    }
+
+    public Sprite GetSprite(int index)
+    {
+        return sprite[index];
     }
 }

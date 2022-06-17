@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Brick
+  - Button
+  - Pause
+  - Explosion
+  - Bomb
   layers:
   - Default
   - TransparentFX

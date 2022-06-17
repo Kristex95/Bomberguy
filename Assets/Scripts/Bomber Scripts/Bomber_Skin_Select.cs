@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bomber_Skin_Select : MonoBehaviour
 {
     public AnimatorDB animDB;
+    private SpriteRenderer sr;
 
     public Animator animator;
     protected AnimatorOverrideController animatorOverrideController;
@@ -13,6 +14,7 @@ public class Bomber_Skin_Select : MonoBehaviour
 
     private void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         UpdateAnimator();
     }
 
@@ -50,5 +52,6 @@ public class Bomber_Skin_Select : MonoBehaviour
     {
         RuntimeAnimatorController controller = animDB.GetAnimator(selectedOption);
         this.animator.runtimeAnimatorController = controller;
+        sr.sprite = animDB.GetSprite(selectedOption);
     }
 }

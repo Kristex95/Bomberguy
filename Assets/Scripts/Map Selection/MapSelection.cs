@@ -6,6 +6,7 @@ public class MapSelection : MonoBehaviour
 {
     [SerializeField]
     List<GameObject> levels = new List<GameObject>();
+    public GameObject winnerMenu;
 
 
     // Start is called before the first frame update
@@ -22,8 +23,8 @@ public class MapSelection : MonoBehaviour
 
     public void StartGame(string levelName)
     {
-        GameController.gameIsRunning = true;
-
+        Time.timeScale = 1f;
+        GameController.RespawnAllPlayers();
         GameObject levelToStart = levels[0];
 
         this.gameObject.SetActive(false);
@@ -36,14 +37,15 @@ public class MapSelection : MonoBehaviour
                 break;
             }
         }
-
         GameController.currentLevel = Instantiate(levelToStart, Vector3.zero, levels[0].transform.rotation);
 
-        GameController.ResetPositions();
         foreach(var player in GameController.activePlayers)
         {
             player.GetComponent<Player_Bomb_Placement>().enabled = true;
         }
+        GameController.ResetPositions();
+        GameController.gameIsRunning = true;
+        winnerMenu.SetActive(false);
     }
 
     private static int CompareListByName(GameObject i1, GameObject i2)

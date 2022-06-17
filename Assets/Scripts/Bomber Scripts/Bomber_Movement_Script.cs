@@ -80,7 +80,11 @@ public class Bomber_Movement_Script : MonoBehaviour
 
     public void OnConfirmPress(InputAction.CallbackContext context)
     {
-        confirm = context.action.triggered;     
+        if (context.started && confirm)
+        {
+            GetComponent<Bomber_Skin_Select>().NextOption();
+        }
+        //confirm = context.action.triggered;     
     }
 
     //Is called when player disconnects or controll is lost
@@ -111,5 +115,29 @@ public class Bomber_Movement_Script : MonoBehaviour
         alive = true;
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public void PauseGame(InputAction.CallbackContext context)
+    {
+        if (context.performed && gameObject.scene.IsValid())
+        {
+            GameObject.FindGameObjectWithTag("Pause").GetComponent<PauseMenu>().ChangePauseState();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Button")
+        {
+            confirm = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Button")
+        {
+            confirm = false;
+        }
     }
 }

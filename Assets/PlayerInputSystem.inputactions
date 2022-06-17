@@ -28,6 +28,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "734b74d7-6233-438b-8f69-665ed092f4e8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -178,7 +186,7 @@
                     "name": "",
                     "id": "542aa680-52a7-4023-9898-01a779ece070",
                     "path": "<Gamepad>/buttonSouth",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": "Controller",
                     "action": "Confirm",
@@ -204,6 +212,28 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Place Bomb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19fe7d7f-6494-42a8-a440-1f27ad2cf9e6",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c48f767e-7b6d-4d54-bab2-cf484af77f84",
+                    "path": "<Gamepad>/start",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

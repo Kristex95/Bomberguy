@@ -8,9 +8,16 @@ public class GameController : MonoBehaviour
 {
     public List<GameObject> readyFields = new List<GameObject>();
     [SerializeField]
+    GameObject winnerScreen;
+    [SerializeField]
     GameObject menu;
     [SerializeField]
     GameObject mapSelection;
+    [SerializeField]
+    public GameObject pauseMenu;
+    [SerializeField]
+    private GameObject winnerResult;
+    [SerializeField]
     public static GameObject currentLevel;
 
     [Header("Player")]
@@ -82,19 +89,42 @@ public class GameController : MonoBehaviour
         }
 #endregion
 
-        if (playersAlive == 1 && activePlayers.Count >= 2)
+        if (playersAlive == 1 && activePlayers.Count >= 2 && gameIsRunning)
         {
-            StartCoroutine(StopGame());
+            gameIsRunning = false;
+            DestroyAllExplosions();
+            winnerScreen.SetActive(true);
+            foreach(var player in activePlayers)
+            {
+                if (player.GetComponent<Bomber_Movement_Script>().alive)
+                {
+                    winnerResult.GetComponent<WinnerImageScript>().ChangeWinnerImage(player);
+                }
+            }
+            Time.timeScale = 0f;
         }
-
-        
-        
+        else if(playersAlive == 0 && activePlayers.Count >= 2 && gameIsRunning)
+        {
+            gameIsRunning = false;
+            DestroyAllExplosions();
+            Time.timeScale = 0f;
+            winnerScreen.SetActive(true);
+            winnerResult.GetComponent<WinnerImageScript>().Draw();
+        }
     }
 
     //Respawns all dead players withtin 1 second
     IEnumerator RespawnAllPlayers(float val)
     {
         yield return new WaitForSeconds(val);
+        foreach (var player in activePlayers)
+        {
+            player.GetComponent<Bomber_Movement_Script>().Respawn();
+        }
+    }
+
+    public static void RespawnAllPlayers()
+    {
         foreach (var player in activePlayers)
         {
             player.GetComponent<Bomber_Movement_Script>().Respawn();
@@ -111,8 +141,9 @@ public class GameController : MonoBehaviour
         for(int i = 0; i < activePlayers.Count; i++)
         {
             activePlayers[i].transform.position = levelSpawns[i].transform.position;
+            levelSpawns[i].SetActive(false);
         }
-    }
+    }   
 
     public void ResetMenuPositions()
     {
@@ -134,19 +165,33 @@ public class GameController : MonoBehaviour
 
 
     //return to menu
-    IEnumerator StopGame()
+    public void StopGame()
     {
-        yield return new WaitForSeconds(2f);
+        if (menu.active)
+            return;
+
         gameIsRunning = false;
         Destroy(currentLevel);
         menu.SetActive(true);
+        pauseMenu.GetComponent<PauseMenu>().Resume();
         mapSelection.SetActive(false);
+        winnerScreen.SetActive(false);
         foreach (var player in activePlayers)
         {
             player.GetComponent<Player_Bomb_Placement>().enabled = false;
         }
         StartCoroutine(RespawnAllPlayers(0f));
         ResetMenuPositions();
+        Time.timeScale = 1f;
+    }
+
+    public void RestartLevel()
+    {
+        string newLevel = currentLevel.name;
+        newLevel = newLevel.Replace("(Clone)", "");
+        Destroy(currentLevel);
+        mapSelection.GetComponent<MapSelection>().StartGame(newLevel);
+        winnerScreen.SetActive(false);
     }
 
     //Adds player to a special position in the dictionary 
@@ -171,6 +216,20 @@ public class GameController : MonoBehaviour
                     break;
                 }
             }
+        }
+    }
+
+    public void DestroyAllExplosions()
+    {
+        GameObject[] explosions = GameObject.FindGameObjectsWithTag("Explosion");
+        GameObject[] bombs = GameObject.FindGameObjectsWithTag("Bomb");
+        for (int i = 0; i < explosions.Length; i++)
+        {
+            Destroy(explosions[i]);
+        }
+        for (int i = 0; i < bombs.Length; i++)
+        {
+            Destroy(bombs[i]);
         }
     }
 
