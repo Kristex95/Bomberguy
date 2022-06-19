@@ -5862,7 +5862,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.00031268597, y: 0.00031268597, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -5900,6 +5900,8 @@ MonoBehaviour:
   tilemap: {fileID: 3304394117850165987}
   wallTile: {fileID: 11400000, guid: ff3323a477b52b64fa13564f46f9fbf4, type: 2}
   brickTile: {fileID: 11400000, guid: 78e244199a90a0b46951dce52689471c, type: 2}
+  powerupChance: 20
+  powerup: {fileID: 2101772873076324020, guid: bd72f68b208529e4994e29a27be6c754, type: 3}
   Explosion: {fileID: 7206985929353614528, guid: 9a3be35268eb8624db9523dd6d38d312, type: 3}
 --- !u!1 &5529031637504797670
 GameObject:

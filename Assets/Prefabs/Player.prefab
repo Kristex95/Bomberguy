@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3304575513810671825}
   - component: {fileID: 4680934925025272882}
   - component: {fileID: 2914463554445336025}
+  - component: {fileID: -917945349598288833}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -247,6 +248,7 @@ MonoBehaviour:
   Bomb: {fileID: 5835364056727333464, guid: 47f436116ce211347af975ec33bc3f0c, type: 3}
   BombSpawn: {fileID: 8210540404615040368}
   timeToPlaceBomb: 1
+  explosionRadius: 2
 --- !u!61 &3304575513810671825
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -306,6 +308,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animDB: {fileID: 11400000, guid: c4af676b04bbef04cbd75b2dd354629b, type: 2}
   animator: {fileID: 4680934925025272882}
+--- !u!114 &-917945349598288833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3304575513810671830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a076156f0033c104d9b5cd732170408a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombLevelupPrefab: {fileID: 2101772873076324020, guid: bd72f68b208529e4994e29a27be6c754, type: 3}
 --- !u!1 &4202797413237346403
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class Player_Bomb_Placement : MonoBehaviour
     private float nextTimeToPlace = 0f;
 
     private bool placedBomb = false;
+    [Range(1, 10)]
+    public int explosionRadius = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +41,8 @@ public class Player_Bomb_Placement : MonoBehaviour
     {
         float xPos = (Mathf.Round(BombSpawn.position.x));
         float yPos = (Mathf.Round(BombSpawn.position.y));
-        Instantiate(Bomb, new Vector3(xPos, yPos, 0), Quaternion.identity);
+        GameObject bomb =  Instantiate(Bomb, new Vector3(xPos, yPos, 0), Quaternion.identity);
+        Bomb.GetComponent<Bomb_Script>().explosionRadius = explosionRadius;
 
     }
 }

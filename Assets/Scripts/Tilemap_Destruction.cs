@@ -9,30 +9,46 @@ public class Tilemap_Destruction : MonoBehaviour
     public Tile wallTile;
     public Tile brickTile;
 
+    [Range(0, 100)]
+    public int powerupChance;
+    public GameObject powerup;
     public GameObject Explosion;
 
-    public void Explode(Vector2 worldPos)
+    public void Explode(Vector2 worldPos, int radius)
     {
         Vector3Int originCell = tilemap.WorldToCell(worldPos);
         DestroyTile(originCell);
-        if (DestroyTile(originCell + new Vector3Int(1, 0, 0)))
+
+        for (int i = 1; i <= radius; i++)
         {
-            DestroyTile(originCell + new Vector3Int(2, 0, 0));
+            if(!DestroyTile(originCell + new Vector3Int(i, 0, 0)))
+            {
+                break;
+            }
         }
 
-        if (DestroyTile(originCell + new Vector3Int(-1, 0, 0)))
+        for (int i = 1; i <= radius; i++)
         {
-            DestroyTile(originCell + new Vector3Int(-2, 0, 0));
+            if (!DestroyTile(originCell + new Vector3Int(-i, 0, 0)))
+            {
+                break;
+            }
         }
 
-        if (DestroyTile(originCell + new Vector3Int(0, 1, 0)))
+        for (int i = 1; i <= radius; i++)
         {
-            DestroyTile(originCell + new Vector3Int(0, 2, 0));
+            if (!DestroyTile(originCell + new Vector3Int(0, i, 0)))
+            {
+                break;
+            }
         }
 
-        if (DestroyTile(originCell + new Vector3Int(0, -1, 0)))
+        for (int i = 1; i <= radius; i++)
         {
-            DestroyTile(originCell + new Vector3Int(0, -2, 0));
+            if (!DestroyTile(originCell + new Vector3Int(0, -i, 0)))
+            {
+                break;
+            }
         }
     }
 
@@ -49,6 +65,14 @@ public class Tilemap_Destruction : MonoBehaviour
             tilemap.SetTile(cell, null);
             Vector3 pos = tilemap.GetCellCenterWorld(cell);
             Instantiate(Explosion, pos, Quaternion.identity);
+
+            int rand = (int)Random.Range(0f, 100f);
+            if (rand <= powerupChance)
+            {
+                GameObject pUp = Instantiate(powerup);
+                pUp.transform.position = pos;
+            }
+
             return false;
         }
         else
@@ -56,9 +80,6 @@ public class Tilemap_Destruction : MonoBehaviour
             Vector3 pos = tilemap.GetCellCenterWorld(cell);
             Instantiate(Explosion, pos, Quaternion.identity);
             return true;
-        }
-        
+        }        
     }
-
-
 }

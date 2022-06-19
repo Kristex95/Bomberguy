@@ -9,6 +9,8 @@ public class Bomb_Script : MonoBehaviour
     public float explodeTime = 3f;
     public bool collidersInside = false;
 
+    public int explosionRadius = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class Bomb_Script : MonoBehaviour
         yield return new WaitForSeconds(explodeTime);
         Destroy(gameObject);
         Vector2 cell = new Vector2(transform.position.x, transform.position.y);
-        FindObjectOfType<Tilemap_Destruction>().Explode(cell);
+        FindObjectOfType<Tilemap_Destruction>().Explode(cell, explosionRadius);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
