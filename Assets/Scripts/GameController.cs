@@ -223,6 +223,7 @@ public class GameController : MonoBehaviour
     {
         GameObject[] explosions = GameObject.FindGameObjectsWithTag("Explosion");
         GameObject[] bombs = GameObject.FindGameObjectsWithTag("Bomb");
+        GameObject[] powerups = GameObject.FindGameObjectsWithTag("Powerup");
         for (int i = 0; i < explosions.Length; i++)
         {
             Destroy(explosions[i]);
@@ -230,6 +231,10 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < bombs.Length; i++)
         {
             Destroy(bombs[i]);
+        }
+        for (int i = 0; i < powerups.Length; i++)
+        {
+            Destroy(powerups[i]);
         }
     }
 

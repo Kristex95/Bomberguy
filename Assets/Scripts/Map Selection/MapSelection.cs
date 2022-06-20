@@ -37,7 +37,7 @@ public class MapSelection : MonoBehaviour
                 break;
             }
         }
-        GameController.currentLevel = Instantiate(levelToStart, Vector3.zero, levels[0].transform.rotation);
+        GameController.currentLevel = Instantiate(levelToStart, this.transform.position, levels[0].transform.rotation);
 
         foreach(var player in GameController.activePlayers)
         {

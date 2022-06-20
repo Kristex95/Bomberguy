@@ -18,14 +18,6 @@ public class Bomber_Skin_Select : MonoBehaviour
         UpdateAnimator();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            NextOption();
-        }
-    }
-
     public void NextOption()
     {
         selectedOption++;
@@ -53,5 +45,16 @@ public class Bomber_Skin_Select : MonoBehaviour
         RuntimeAnimatorController controller = animDB.GetAnimator(selectedOption);
         this.animator.runtimeAnimatorController = controller;
         sr.sprite = animDB.GetSprite(selectedOption);
+    }
+
+    public void UpdateAnimator(int option)
+    {
+        while (option >= animDB.AnimationCount)
+        {
+            option -= animDB.AnimationCount;
+        }
+        RuntimeAnimatorController controller = animDB.GetAnimator(option);
+        this.animator.runtimeAnimatorController = controller;
+        sr.sprite = animDB.GetSprite(option);
     }
 }

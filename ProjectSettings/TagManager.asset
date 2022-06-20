@@ -9,6 +9,7 @@ TagManager:
   - Pause
   - Explosion
   - Bomb
+  - Powerup
   layers:
   - Default
   - TransparentFX

@@ -7,10 +7,11 @@ public class Bomber_Movement_Script : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
-    public bool confirm = false;
+    public string button = "null";
     public float speed;
     public bool alive = true;
 
+    
     private Vector2 moveDir = Vector2.zero;
     
 
@@ -80,11 +81,21 @@ public class Bomber_Movement_Script : MonoBehaviour
 
     public void OnConfirmPress(InputAction.CallbackContext context)
     {
-        if (context.started && confirm)
+        if (context.started && button == "skinSelector")
         {
             GetComponent<Bomber_Skin_Select>().NextOption();
         }
-        //confirm = context.action.triggered;     
+        else if(context.started && button == "nameSelector")
+        {
+            GetComponent<Bomber_Name_Select>().NextOption();
+        }
+        else if(context.started && button == "randromizer")
+        {
+            int rand = Random.Range(0, 100);
+            GetComponent<Bomber_Name_Select>().UpdateName(rand);
+            rand = Random.Range(0, 100);
+            GetComponent<Bomber_Skin_Select>().UpdateAnimator(rand);
+        }
     }
 
     //Is called when player disconnects or controll is lost
@@ -129,9 +140,21 @@ public class Bomber_Movement_Script : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Button")
+        if(collision.gameObject.GetComponent<Change_Controller_Button>())
         {
-            confirm = true;
+            button = "skinSelector";
+        }
+        else if (collision.gameObject.GetComponent<Change_Name_Button>())
+        {
+            button = "nameSelector";
+        }
+        else if (collision.gameObject.GetComponent<Randromizer_Button>())
+        {
+            button = "randromizer";
+        }
+        else
+        {
+            button = "null";
         }
     }
 
@@ -139,7 +162,7 @@ public class Bomber_Movement_Script : MonoBehaviour
     {
         if (collision.gameObject.tag == "Button")
         {
-            confirm = false;
+            button = "null";
         }
     }
 }

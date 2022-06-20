@@ -19,7 +19,18 @@ public class Ready_Status_Text : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        str = "Ready " + GameController.playersReady + "/" + GameController.activePlayers.Count;
+        if(GameController.activePlayers.Count == 0)
+        {
+            str = "Press any button to join";
+        }
+        else if(GameController.activePlayers.Count == 1)
+        {
+            str = "Waiting for other players";
+        }
+        else
+        {
+            str = "Ready " + GameController.playersReady + "/" + GameController.activePlayers.Count;
+        }
         Text.text = str;
     }
 }
